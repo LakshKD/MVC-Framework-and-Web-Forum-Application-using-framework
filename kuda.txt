@@ -1,0 +1,33 @@
+CREATE TABLE user_topic( User_Id INT NOT NULL, Topic_Id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (Topic_Id) );
+
+//$qb->createTable('testdb','Models.ForumApp.PDO.User',array('string', 'string', 'string','string','string'), array('primary key','NOT NULL','NOT NULL','NOT NULL',''));
+  //$qb->createTable('testdb','Models.ForumApp.PDO.Topic',array('string', 'int', 'string'), array('NOT NULL','PRIMARY KEY AUTO_INCREMENT','NOT NULL'));
+  //$qb->createTable('testdb','Models.ForumApp.PDO.Field',array('string', 'int'), array('NOT NULL','PRIMARY KEY AUTO_INCREMENT'));
+  //$qb->createTable('testdb','Models.ForumApp.PDO.Comment',array('string', 'int','int',), array('NOT NULL','PRIMARY KEY AUTO_INCREMENT',''));
+  //$qb->createTable('testdb','Models.ForumApp.PDO.Post',array('string', 'string', 'int', 'string'), array('NOT NULL', 'NOT NULL','PRIMARY KEY AUTO_INCREMENT',''));
+  //var_dump($qb->insert("testdb.Users",array("UserHandle" => 'lakshya',"Password" => 'abc',"Sex" => 'M',"DOB" => '09-03-1993',"Interests" => 'CSE,Maths')));
+
+
+
+  mysql> CREATE TABLE field_topic( Field_Id INT NOT NULL, Topic_Id INt NOT NULL AUTO_INCREMENT, PRIMARY KEY (Topic_Id) );
+Query OK, 0 rows affected (0.31 sec)
+
+mysql> CREATE TABLE topic_post( Post_Id INT NOT NULL, Topic_Id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (Post_Id) );
+ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+mysql> CREATE TABLE topic_post( Post_Id INT NOT NULL AUTO_INCREMENT, Topic_Id INT NOT NULL, PRIMARY KEY (Post_Id) );
+Query OK, 0 rows affected (0.35 sec)
+
+mysql> CREATE TABLE post_comment( Post_Id INT NOT NULL, Comment_Id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (Comment_Id) );
+Query OK, 0 rows affected (0.49 sec)
+
+mysql> CREATE TABLE user_field( User_Id INT NOT NULL, Field_Id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (Field_Id) );
+Query OK, 0 rows affected (0.35 sec)
+
+mysql> CREATE TABLE user_post( User_Id INT NOT NULL, Post_Id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (Post_Id) );
+Query OK, 0 rows affected (0.41 sec)
+
+mysql> CREATE TABLE user_comment( User_Id INT NOT NULL, Comment_Id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (Comment_Id) );
+Query OK, 0 rows affected (0.41 sec)
+
+mysql> CREATE TABLE user_topic( User_Id INT NOT NULL, Topic_Id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (Topic_Id) );
+Query OK, 0 rows affected (0.34 sec)
